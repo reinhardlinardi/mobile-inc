@@ -18,13 +18,11 @@ class CreateGamesTable extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->integer('id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->string('player'); // Player name in game
+            $table->string('player'); // Player name on Unity
             $table->timestamps();
 
             $table->primary('id');
-            $table->unique(['user_id','player']);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->index('player');
+            $table->foreign('user_id')->references('id')->on('users');
         });
 
         Schema::enableForeignKeyConstraints();
