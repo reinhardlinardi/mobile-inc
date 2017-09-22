@@ -13,14 +13,17 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->integer('id')->unsigned(); // user ID
+            $table->string('name'); // name from Google Accounts
             $table->timestamps();
+
+            $table->primary('id');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -30,6 +33,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('users');
+        Schema::enableForeignKeyConstraints();
     }
 }
