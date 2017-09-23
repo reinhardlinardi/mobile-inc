@@ -1,0 +1,20 @@
+.navbar {
+    background: black;
+}
+
+.navbar-brand {
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+}
+
+.active-home {
+    color: #3b95ce;
+}
+
+.active-manage {
+    color: #26bdb2;
+}
+
+.passive {
+    color: white;
+}

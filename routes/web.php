@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', function() { return view('home'); })->name('home');
+Route::get('/manage', function() { return view('manage'); })->name('manage');
