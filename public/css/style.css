@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Coolvetica";
+    src: url("Coolvetica.ttf");
+}
+
+body {
+    font-family: "Coolvetica";
+}
+
 .navbar {
     background: black;
 }
