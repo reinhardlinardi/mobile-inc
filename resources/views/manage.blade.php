@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('stylesheet')
+@endsection
+
 @section('title')
     Manage Mobile, Inc.
 @endsection
@@ -10,4 +13,7 @@
 @endsection
 
 @section('content')
+@endsection
+
+@section('script')
 @endsection
