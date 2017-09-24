@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Welcome to Mobile, Inc.
+    Mobile, Inc. | The 3-platform e-commerce management game
 @endsection
 
 @section('navbar')
@@ -27,30 +27,32 @@
 
 @section('content')
     <div class="container-fluid">
+        <div class="row" style="">
+            <br />
+            <h1 style="font-family: Muli; text-align: center; color: #c453fc;"> Manage your E-commerce in 3 platforms! </h1>
+            <br />
+        </div>
         <div class="row">
-            <div class="col-md-6" style="padding-top: 30px; padding-left:100px;">
-                <img src="{{ asset('home.png') }}" class="image">
+            <br />
+            <br />
+            <div class="col-md-1"></div>
+            <div class="col-md-5 content">
+                <img src="{{ asset('home_white.png') }}">
             </div>
-            <div class="col-md-6" style="padding-top: 50px;">
+            <div class="col-md-5 content">
                 <div>
-                    <h1 style="font-family: Source Sans Pro;"> Manage your E-commerce in 3 platforms!</h1>
-                    <h2 style="font-family: Source Sans Pro;"> How even that possible?? </h2>
+                    <h2 style="font-family: Muli; color: #dbd653;"> How even that possible?? </h2>
                     <br />
                     <br />
-                    <br />
-                    <span style="font-family: Source Sans Pro; font-size: 20px;">
+                    <span style="font-family: Open Sans; font-size: 16px; color: #00bdfc;">
                         Mobile, Inc. offers you gameplay using 3 platforms for better experience.
                         <br /> These platforms run independently, but they don't have to.
                         <br /><br /> Don't you want too feel the epic management strategy in order to win the game?
-                        <br /> <br /> Start playing Mobile, Inc. now! &nbsp;We promise, you won't regret it.
+                        <br /><br /><br /> Start playing Mobile, Inc. now! &nbsp;We promise, you won't regret it.
                     </span>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <span style="font-family: Source Sans Pro; font-size: 16px;"> &copy; {{ Carbon\Carbon::now()->year }}. &nbsp;Mobile, Inc. Team. </span>
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 @endsection
