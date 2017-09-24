@@ -8,21 +8,9 @@
     Mobile, Inc. | The 3-platform e-commerce management game
 @endsection
 
-@section('navbar')
-    <nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <div class="navbar-brand">
-                    <img src="{{ asset('navbar_logo.png') }}" />
-                </div>
-            </div>
-
-            <ul class="nav navbar-nav">
-                <li><a href="#"><span class="active-home" style="font-family: Coolvetica;">Home</span></a></li>
-                <li><a href="{{ route('manage') }}"><span class="passive" style="font-family: Coolvetica;">Manage</span></a></li>
-            </ul>
-        </div>
-    </nav>
+@section('navlink')
+    <li><a href="#"><span class="active-home" style="font-family: Coolvetica;">Home</span></a></li>
+    <li><a href="{{ route('manage') }}"><span class="passive" style="font-family: Coolvetica;">Manage</span></a></li>
 @endsection
 
 @section('content')
