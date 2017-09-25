@@ -12,4 +12,6 @@
 */
 
 Route::get('/', function() { return view('home'); })->name('home');
-Route::get('/manage', function() { return view('manage'); })->name('manage');
+Route::get('/manage', function() { return view('manage'); })->middleware('auth')->name('manage');
+
+Auth::routes();

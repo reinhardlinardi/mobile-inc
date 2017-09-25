@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGamesTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,14 +15,13 @@ class CreateGamesTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->integer('id')->unsigned();
-            $table->integer('account_id')->unsigned();
-            $table->string('player'); // Player name on Unity
+            $table->string('username');
+            $table->string('password');
             $table->timestamps();
 
             $table->primary('id');
-            $table->foreign('account_id')->references('id')->on('accounts');
         });
 
         Schema::enableForeignKeyConstraints();
@@ -36,7 +35,7 @@ class CreateGamesTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('users');
         Schema::enableForeignKeyConstraints();
     }
 }

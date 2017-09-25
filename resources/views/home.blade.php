@@ -8,14 +8,48 @@
     Mobile, Inc. | The 3-platform e-commerce management game
 @endsection
 
-@section('navlink')
-    <li><a href="#"><span class="active-home" style="font-family: Coolvetica;">Home</span></a></li>
-    <li><a href="{{ route('manage') }}"><span class="passive" style="font-family: Coolvetica;">Manage</span></a></li>
+@section('navbar')
+    <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        <img src="{{ asset('navbar_logo.png') }}" />
+                    </div>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->username }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
+        </nav>
 @endsection
 
 @section('content')
     <div class="container-fluid">
-        <div class="row" style="">
+        <div class="row">
             <br />
             <h1 style="font-family: Muli; text-align: center; color: #c453fc;"> Manage your E-commerce in 3 platforms! </h1>
             <br />

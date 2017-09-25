@@ -24,20 +24,8 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <img src="{{ asset('navbar_logo.png') }}" />
-                    </div>
-                </div>
+        @yield('navbar')
 
-                <ul class="nav navbar-nav">
-                    @yield('navlink')
-                </ul>
-            </div>
-        </nav>
-        
         @yield('content')
     </div>
 
