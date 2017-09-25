@@ -11,8 +11,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 1)->create()->each( function($user) {
-            $user->save(array(factory(App\User::class)->make()));
-        });
+        DB::table('users')->insert([
+            'id' => env('ADMIN_ID'),
+            'username' => env('ADMIN_USERNAME'),
+            'password' => bcrypt(env('ADMIN_PASSWORD')),
+            'created_at' => Carbon\Carbon::now(),
+            'updated_at' => Carbon\Carbon::now()
+        ]);
     }
 }
