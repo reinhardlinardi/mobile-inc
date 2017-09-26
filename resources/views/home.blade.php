@@ -10,41 +10,41 @@
 
 @section('navbar')
     <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <img src="{{ asset('navbar_logo.png') }}" />
-                    </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <img src="{{ asset('navbar_logo.png') }}" />
                 </div>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->username }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endguest
-                </ul>
             </div>
-        </nav>
+
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @guest
+                    <li style="padding-right: 10px;">
+                        <p class="navbar-btn">
+                            <a href="{{ route('login') }}" class="btn btn-info">
+                                <span style="font-family: Raleway; font-size: 15px;">Login</span>
+                            </a>
+                        </p>    
+                    </li>
+                @else
+                    <li style="padding-right: 10px;">
+                        <p class="navbar-btn">
+                            <a href="{{ route('logout') }}" class="btn btn-warning"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                <span style="font-family: Raleway; font-size: 15px;">Logout</span>
+                            </a>
+                        </p>    
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                @endguest
+            </ul>
+        </div>
+    </nav>
 @endsection
 
 @section('content')

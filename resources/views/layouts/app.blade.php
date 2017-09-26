@@ -13,7 +13,7 @@
     <title> @yield('title') </title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans|Raleway" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">

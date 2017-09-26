@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function() { return view('home'); })->name('home');
+Route::get('/home', function() { return redirect('/'); });
 Route::get('/manage', function() { return view('manage'); })->middleware('auth')->name('manage');
+Route::get('/logout', function() { return redirect('home'); })->middleware('auth')->name('logout');
 
 Auth::routes();
