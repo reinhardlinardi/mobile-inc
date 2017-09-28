@@ -19,14 +19,14 @@
                 <form method="POST" action="{{ route('manage_user') }}">
                     {{ csrf_field() }}
 
-                    <input type="text" class="form-control" name="name" placeholder="User" required>
+                    <input type="text" class="form-control" name="name" placeholder="User" id="add-form" required>
                     <br />
                     <button type="submit" class="btn btn-primary form-submit-positive-btn"> Add </button>
                 </form>
             </div>
             <div class="col-md-8">
                 @if(!(empty($add)))
-                    <div style="color: green; margin-top: 10px;"> {{ $add }} </div>
+                    <div style="color: green; margin-top: 10px;" id="add-message"> {{ $add }} </div>
                 @endif
             </div>
         </div>
