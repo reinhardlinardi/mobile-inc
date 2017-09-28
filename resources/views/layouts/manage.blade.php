@@ -46,11 +46,23 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <div><button type="button" class="btn btn-default form-btn" id="user-button">Manage User &nbsp;&gt;&gt;</button></div>
+                <div>
+                    <button type="button" class="btn btn-default form-btn" id="user-button">
+                        <a class="form-btn-link" href="{{ route('manage_user') }}"> Manage User &nbsp;&gt;&gt; </a>
+                    </button>
+                </div>
                 <br />
-                <div><button type="button" class="btn btn-default form-btn" id="confirm-order-button">Send Order Confirmation &nbsp;&gt;&gt;</button></div>
+                <div>
+                    <button type="button" class="btn btn-default form-btn" id="confirm-order-button">
+                        <a class="form-btn-link" href="{{ route('manage_confirmation') }}"> Send Order Confirmation &nbsp;&gt;&gt; </a>
+                    </button>
+                </div>
                 <br />
-                <div><button type="button" class="btn btn-default form-btn" id="promotion-send-button">Send Promotion Code &nbsp;&gt;&gt;</button></div>
+                <div>
+                    <button type="button" class="btn btn-default form-btn" id="promotion-send-button">
+                        <a class="form-btn-link" href="{{ route('manage_promotion') }}"> Send Promotion Code &nbsp;&gt;&gt; </a>
+                    </button>
+                </div>
             </div>
             <div class="col-md-9">
                 @yield('forms')

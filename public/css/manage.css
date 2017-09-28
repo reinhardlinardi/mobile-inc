@@ -1,16 +1,3 @@
-.form-btn {
-    border-style : none;
-    border-radius: 0;
-    width: 100%;
-    height: 50px;
-    font-family: Raleway;
-    color: white;
-}
-
-.btn:hover {
-    color: white;
-}
-
 hr {
     border: 0;
     clear: both;
@@ -18,6 +5,28 @@ hr {
     width: 98%;               
     background-color:lightgray;
     height: 1px;
+}
+
+.form-btn {
+    border-style : none;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    font-family: Raleway;
+}
+
+.form-btn:hover, .form-btn:focus {
+    outline: none !important;
+}
+
+.form-btn-link {
+    display: block;
+    color: white;
+}
+
+.form-btn-link:link, .form-btn-link:visited, .form-btn-link:hover, .form-btn-link:active {
+    text-decoration: none;
+    color: white;
 }
 
 #user-button {
