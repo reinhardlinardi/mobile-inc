@@ -13,7 +13,8 @@
 
 Route::get('/', function() { return view('home'); })->name('home');
 Route::get('/home', function() { return redirect('/'); });
-Route::get('/manage', function() { return view('manage'); })->middleware('auth')->name('manage');
-Route::get('/logout', function() { return redirect('home'); })->middleware('auth')->name('logout');
+Route::get('/manage/user', function() { return view('manage_user'); })->middleware('auth')->name('manage');
+Route::get('/manage/confirmation', function() { return view('manage_confirmation'); })->middleware('auth');
+Route::get('/manage/promotion', function() { return view('manage_promotion'); })->middleware('auth');
 
 Auth::routes();

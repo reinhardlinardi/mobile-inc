@@ -39,12 +39,22 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <br />
-            <h1 style="text-align: center;"> Management </h1>
-            <br />
+            <div class="col-md-12">
+                <h3 style="font-family: Muli;"> Manage </h3>
+            </div>
+            <hr />
         </div>
         <div class="row">
-            
+            <div class="col-md-3">
+                <div><button type="button" class="btn btn-default form-btn" id="user-button">Manage User &nbsp;&gt;&gt;</button></div>
+                <br />
+                <div><button type="button" class="btn btn-default form-btn" id="confirm-order-button">Send Order Confirmation &nbsp;&gt;&gt;</button></div>
+                <br />
+                <div><button type="button" class="btn btn-default form-btn" id="promotion-send-button">Send Promotion Code &nbsp;&gt;&gt;</button></div>
+            </div>
+            <div class="col-md-9">
+                @yield('forms')
+            </div>
         </div>
     </div>
 @endsection

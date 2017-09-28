@@ -1,0 +1,33 @@
+.form-btn {
+    border-style : none;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    font-family: Raleway;
+    color: white;
+}
+
+.btn:hover {
+    color: white;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 98%;               
+    background-color:lightgray;
+    height: 1px;
+}
+
+#user-button {
+    background-color: #2eadf7;
+}
+
+#confirm-order-button {
+    background-color: #39db43;
+}
+
+#promotion-send-button {
+    background-color: #ffb20c;
+}
