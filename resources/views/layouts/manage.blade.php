@@ -47,21 +47,27 @@
         <div class="row">
             <div class="col-md-3">
                 <div>
-                    <button type="button" class="btn btn-default form-btn" id="user-button">
-                        <a class="form-btn-link" href="{{ route('manage_user') }}"> Manage User &nbsp;&gt;&gt; </a>
-                    </button>
+                    <a class="form-btn-link" href="{{ route('manage_user') }}">
+                        <button type="button" class="btn btn-default form-btn" id="user-button" style="padding: 0;">
+                            <span style="color: white;"> Manage User &nbsp;&gt;&gt; </span>
+                        </button>
+                    </a>
                 </div>
                 <br />
                 <div>
-                    <button type="button" class="btn btn-default form-btn" id="confirm-order-button">
-                        <a class="form-btn-link" href="{{ route('manage_confirmation') }}"> Send Order Confirmation &nbsp;&gt;&gt; </a>
-                    </button>
+                    <a class="form-btn-link" href="{{ route('manage_confirmation') }}">
+                        <button type="button" class="btn btn-default form-btn" id="confirm-order-button" style="padding: 0;">
+                            <span style="color: white;"> Send Order Confirmation &nbsp;&gt;&gt; </span>
+                        </button>
+                    </a>
                 </div>
                 <br />
                 <div>
-                    <button type="button" class="btn btn-default form-btn" id="promotion-send-button">
-                        <a class="form-btn-link" href="{{ route('manage_promotion') }}"> Send Promotion Code &nbsp;&gt;&gt; </a>
-                    </button>
+                    <a class="form-btn-link" href="{{ route('manage_promotion') }}">
+                        <button type="button" class="btn btn-default form-btn" id="promotion-send-button" style="padding: 0;">
+                            <span style="color: white;"> Send Promotion Code &nbsp;&gt;&gt; </span>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="col-md-9">
