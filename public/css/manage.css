@@ -29,6 +29,12 @@ hr {
     color: white;
 }
 
+.form-submit-positive-btn {
+    border-style: none;
+    border-radius: 0;
+    background-color: #2e79f2;
+}
+
 #user-button {
     background-color: #2eadf7;
 }

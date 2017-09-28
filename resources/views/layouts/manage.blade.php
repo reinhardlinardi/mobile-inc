@@ -40,7 +40,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h3 style="font-family: Muli;"> Manage </h3>
+                <h3 style="font-family: Muli;"> @yield('manage_title') </h3>
             </div>
             <hr />
         </div>

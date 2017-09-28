@@ -1,7 +1,11 @@
 @extends('layouts.manage')
 
 @section('title')
-    Manage Promotion | Mobile, Inc.
+    Promotion | Mobile, Inc.
+@endsection
+
+@section('manage_title')
+    Send Promotion Code
 @endsection
 
 @section('forms')

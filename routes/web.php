@@ -17,4 +17,6 @@ Route::get('/manage/user', function() { return view('manage_user'); })->middlewa
 Route::get('/manage/confirmation', function() { return view('manage_confirmation'); })->middleware('auth')->name('manage_confirmation');
 Route::get('/manage/promotion', function() { return view('manage_promotion'); })->middleware('auth')->name('manage_promotion');
 
+Route::post('/manage/user','AccountController@add');
+
 Auth::routes();

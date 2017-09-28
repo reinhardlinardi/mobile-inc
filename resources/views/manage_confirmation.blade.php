@@ -1,7 +1,11 @@
 @extends('layouts.manage')
 
 @section('title')
-    Manage Order Confirmation | Mobile, Inc.
+    Order Confirmation | Mobile, Inc.
+@endsection
+
+@section('manage_title')
+    Send Order Confirmation
 @endsection
 
 @section('forms')
