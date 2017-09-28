@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans|Raleway" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     @yield('stylesheet')

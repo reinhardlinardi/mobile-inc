@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-        Manage Mobile, Inc.
+        @yield('title')
 @endsection
 
 @section('navbar')
