@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->integer('id')->unsigned();
             $table->integer('account_id')->unsigned();
-            $table->string('player');
+            $table->string('player')->nullable(); // NULL at first
             $table->integer('phone_id')->unsigned();
             $table->integer('quantity')->unsigned();
             $table->integer('subtotal')->unsigned();
