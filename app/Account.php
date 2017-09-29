@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     public $incrementing = false;
-    protected $fillable = ['id','name'];
+    protected $fillable = ['id','name','firebase_key'];
 
-    public function games()
+    public function orders()
     {
-        return $this->hasMany('App\Game');
+        return $this->hasMany('App\Order');
     }
 }

@@ -11,6 +11,6 @@ class Order extends Model
 
     public function game()
     {
-        return $this->belongsTo('App\Game');
+        return $this->belongsTo('App\Account');
     }
 }

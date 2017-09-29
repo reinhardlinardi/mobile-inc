@@ -17,7 +17,6 @@ class CreateOrdersTable extends Migration
 
         Schema::create('orders', function (Blueprint $table) {
             $table->integer('id')->unsigned();
-            $table->integer('game_id')->unsigned();
             $table->integer('account_id')->unsigned();
             $table->string('player');
             $table->integer('phone_id')->unsigned();
@@ -26,7 +25,6 @@ class CreateOrdersTable extends Migration
             $table->boolean('sent'); // Order sent to Unity
             
             $table->primary('id');
-            $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();

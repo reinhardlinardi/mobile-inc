@@ -20,7 +20,6 @@ class CreateHandphonesTable extends Migration
             $table->string('brand');
             $table->string('type');
             $table->integer('price')->unsigned();
-            $table->integer('stock')->unsigned();
 
             $table->primary('id');
         });

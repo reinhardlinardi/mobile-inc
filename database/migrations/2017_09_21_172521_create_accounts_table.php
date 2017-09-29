@@ -18,6 +18,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->integer('id')->unsigned(); // user ID
             $table->string('name'); // name from Google Accounts
+            $table->string('firebase_key'); // firebase key for Google Accounts
             $table->timestamps();
 
             $table->primary('id');
