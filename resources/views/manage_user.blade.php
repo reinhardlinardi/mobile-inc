@@ -19,7 +19,9 @@
                 <form method="POST" action="{{ route('manage_user') }}">
                     {{ csrf_field() }}
 
-                    <input type="text" class="form-control" name="name" placeholder="User" id="add-form" required>
+                    <input type="text" class="form-control add-form" name="name" placeholder="User" required>
+                    <br />
+                    <input type="text" class="form-control add-form" name="firebase_key" placeholder="Firebase Key" required>
                     <br />
                     <button type="submit" class="btn btn-primary form-submit-positive-btn"> Add </button>
                 </form>

@@ -7,6 +7,10 @@ hr {
     height: 1px;
 }
 
+.btn:focus {
+    outline: none !important;
+}
+
 .form-btn-link {
     text-decoration: none;
 }

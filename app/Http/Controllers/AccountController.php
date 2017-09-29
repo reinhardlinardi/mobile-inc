@@ -13,6 +13,7 @@ class AccountController extends Controller
         $account = Account::create([
             'id' => rand(1,100),
             'name' => $request['name'],
+            'firebase_key' => $request['firebase_key'],
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
