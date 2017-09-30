@@ -12,8 +12,8 @@ class HandphonesTableSeeder extends Seeder
     public function run()
     {
         $brand = ["Xiaomi","Samsung"];
-        $type = ["Mi 5","Mi Max","Redmi 3s","Galaxy Note 8","Galaxy Note 5","Galaxy S8+"];
-        $price = [456, 402, 134, 950, 840, 825];
+        $type = ["Mi_5","Mi_Max","Redmi_3s","Galaxy_Note_8","Galaxy_Note_5","Galaxy_S8+"];
+        $price = [460, 400, 140, 950, 840, 820];
 
         for($count = 0; $count < 6; $count++) {
             DB::table('handphones')->insert([
