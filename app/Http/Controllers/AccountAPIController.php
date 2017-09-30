@@ -10,16 +10,26 @@ class AccountAPIController extends Controller
 {
     public function add(Request $request)
     {
-        $account = Account::create([
-            'id' => rand(1,100),
-            'name' => $request['name'],
-            'firebase_key' => $request['firebase_key'],
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ]);
+        $registered = Account::where('name', $request['name'])->first();
+
+        if($registered->count()) {
+            $registered->update([
+                'firebase_key' => $request['firebase_key'],
+                'updated_at' => Carbon::now()
+            ]);
+        }
+        else {
+            $account = Account::create([
+                'id' => rand(1,100),
+                'name' => $request['name'],
+                'firebase_key' => $request['firebase_key'],
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ]);
+        }
 
         return response()->json([
-            'message' => 'Success'
+            'message' => 'User added.'
         ]);
     }
 }
