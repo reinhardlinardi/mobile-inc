@@ -12,7 +12,7 @@ class AccountController extends Controller
     {
         $registered = Account::where('name', $request['name'])->first();
         
-        if($registered->count()) {
+        if(!($registered->isEmpty())) {
             $registered->update([
                 'firebase_key' => $request['firebase_key'],
                 'updated_at' => Carbon::now()
