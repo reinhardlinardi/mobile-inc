@@ -8,6 +8,7 @@ class Account extends Model
 {
     public $incrementing = false;
     protected $fillable = ['id','name','firebase_key'];
+    protected $hidden = ['firebase_key'];
 
     public function orders()
     {
