@@ -11,7 +11,7 @@
 @section('forms')
     <div class="container">
         <div class="row">
-            <h4 style="margin-left: 16px;"> Add User </h4>
+            <h4 style="margin-left: 16px;"> Add or Update User </h4>
         </div>
         <br />
         <div class="row">
@@ -23,7 +23,7 @@
                     <br />
                     <input type="text" class="form-control add-form" name="firebase_key" placeholder="Firebase Key" required>
                     <br />
-                    <button type="submit" class="btn btn-primary form-submit-positive-btn"> Add </button>
+                    <button type="submit" class="btn btn-primary form-submit-positive-btn"> Submit </button>
                 </form>
             </div>
             <div class="col-md-8">
