@@ -17,7 +17,7 @@ class HandphonesTableSeeder extends Seeder
 
         for($count = 0; $count < 6; $count++) {
             DB::table('handphones')->insert([
-                'id' => rand(1,100),
+                'id' => rand(1,1000),
                 'brand' => $brand[intdiv($count,3)],
                 'type' => $type[$count],
                 'price' => $price[$count]
