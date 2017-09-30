@@ -16,14 +16,15 @@ class PromotionAPIController extends Controller
     {
         $registered = Account::get();
 
-        if(!(empty($registered)))
+        if(!($registered->isEmpty()))
         {
             $server = Server::get()->first()['server_key'];
             $promo_number = rand(1,1000);
 
             foreach($registered as $account)
             {
-                $code = substr(md5("promo_" . $promo_number . "_" . str_random(8)),0,8);
+                $account_number = rand(1000,9999);
+                $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,8);
 
                 $client = new Client();
                 $respone = $client->post("https://fcm.googleapis.com/fcm/send",[
