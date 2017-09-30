@@ -7,6 +7,7 @@ use App\Account;
 use App\Handphone;
 use App\Promotion;
 use App\Order;
+use App\Trend;
 
 class OrderAPIController extends Controller
 {
@@ -46,11 +47,20 @@ class OrderAPIController extends Controller
                     'subtotal' => (int)($phone_price * $quantity * $promo_price),
                     'sent' => false
                 ]);
+
+                $trend = Trend::where('phone_id',$phone_id)->first();
+                $trend->update([
+                    'orders' => $trend['orders'] + $quantity
+                ]);
             }
+
+            // update tabel statistics
         }
 
         return response()->json([
             'message' => 'Order success.'
         ]);
     }
+
+    // function send, ubah send jadi true trus FCM
 }
