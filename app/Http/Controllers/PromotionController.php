@@ -15,8 +15,6 @@ class PromotionController extends Controller
     {
         $registered = Account::get();
 
-        dd($registered);
-
         if(!(empty($registered)))
         {
             $server = Server::get()->value('server_key');
