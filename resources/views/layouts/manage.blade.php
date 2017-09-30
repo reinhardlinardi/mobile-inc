@@ -57,7 +57,7 @@
                 <div>
                     <a class="form-btn-link" href="{{ route('manage_confirmation') }}">
                         <button type="button" class="btn btn-default form-btn" id="confirm-order-button" style="padding: 0;">
-                            <span style="color: white;"> Send Order Confirmation &nbsp;&gt;&gt; </span>
+                            <span style="color: white;"> Manage Order Confirmation &nbsp;&gt;&gt; </span>
                         </button>
                     </a>
                 </div>
@@ -65,7 +65,7 @@
                 <div>
                     <a class="form-btn-link" href="{{ route('manage_promotion') }}">
                         <button type="button" class="btn btn-default form-btn" id="promotion-send-button" style="padding: 0;">
-                            <span style="color: white;"> Send Promotion Code &nbsp;&gt;&gt; </span>
+                            <span style="color: white;"> Manage Promotion Code &nbsp;&gt;&gt; </span>
                         </button>
                     </a>
                 </div>

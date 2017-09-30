@@ -5,7 +5,7 @@
 @endsection
 
 @section('manage_title')
-    Send Order Confirmation
+    Manage Order Confirmation
 @endsection
 
 @section('forms')

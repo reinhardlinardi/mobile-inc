@@ -20,10 +20,12 @@ Route::get('/manage/confirmation', function() { return view('manage_confirmation
 Route::get('/manage/promotion', function() { return view('manage_promotion'); })->middleware('auth')->name('manage_promotion');
 
 Route::post('/manage/user','AccountController@add');
+Route::post('/manage/promotion','PromotionController@send');
 
 // API request (return JSON)
 
 Route::post('/api/manage/user','AccountAPIController@add');
+Route::post('/api/manage/promotion','PromotionAPIController@send');
 
 // Authentication routing
 

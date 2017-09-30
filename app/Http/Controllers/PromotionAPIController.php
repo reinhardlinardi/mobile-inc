@@ -7,7 +7,7 @@ use App\Promotion;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
-class PromotionController extends Controller
+class PromotionAPIController extends Controller
 {
     public function send(Request $request)
     {
@@ -38,10 +38,12 @@ class PromotionController extends Controller
                 ]);
             }
 
-            $progress = "Promotion codes sent.";
+            return response()->json([
+                'message' => "Promotion codes sent."
+            ]);
         }
-        else $progress = "No registered user.";
-
-        return view('manage_promotion',compact('progress'));
+        else return response()->json([
+            'message' => "No registered user."
+        ]);
     }
 }
