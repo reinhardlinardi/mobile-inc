@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Promotion;
+use App\Account;
+use App\Server;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
@@ -12,6 +14,8 @@ class PromotionController extends Controller
     public function send(Request $request)
     {
         $registered = Account::get();
+
+        dd($registered);
 
         if(!(empty($registered)))
         {
