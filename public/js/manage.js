@@ -6,8 +6,4 @@ $(document).ready( function() {
     $('#promo-form').focus( function() {
         $('#promo-message').text('');
     });
-
-    $('#promo-btn').focus( function() {
-        $('#promo-message').text('Sending...');
-    });
 });

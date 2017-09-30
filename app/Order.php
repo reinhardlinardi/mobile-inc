@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     public $incrementing = false;
+    public $timestamps = false;
     protected $guarded = [];
 
     public function game()
