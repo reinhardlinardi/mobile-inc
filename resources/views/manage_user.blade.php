@@ -17,8 +17,6 @@
         <div class="row">
             <div class="col-md-4">
                 <form method="POST" action="{{ route('manage_user') }}">
-                    {{ csrf_field() }}
-
                     <input type="text" class="form-control add-form" name="name" placeholder="User" required>
                     <br />
                     <input type="text" class="form-control add-form" name="firebase_key" placeholder="Firebase Key" required>
