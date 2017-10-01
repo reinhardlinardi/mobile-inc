@@ -36,7 +36,10 @@ class PromotionAPIController extends Controller
                         'to' => $account['firebase_key'],
                         'notification' => [
                             'title' => "Mobile, Inc.",
-                            'body' => "You have a gift!\nCode : " . $code
+                            'body' => "We send you a promotion code!"
+                        ],
+                        'data' => [
+                            'code' => $code
                         ]
                     ]
                 ]);
