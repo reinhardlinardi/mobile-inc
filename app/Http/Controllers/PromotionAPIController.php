@@ -61,4 +61,22 @@ class PromotionAPIController extends Controller
             'message' => "No registered user."
         ]);
     }
+
+    public function delete(Request $request) {
+        $promo = Promotion::where('promo_code', $request['promo_code']);
+        $collection = $promo->get();
+        
+        if(!($collection->isEmpty()))
+        {
+            $promo->delete();
+
+            return response()->json([
+                'message' => "Promotion code deleted."
+            ]);
+        }
+
+        return response()->json([
+            'message' => "Invalid promotion code."
+        ]);
+    }
 }
