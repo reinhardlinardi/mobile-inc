@@ -80,7 +80,7 @@ class PromotionAPIController extends Controller
         ]);
     }
 
-    public function validate(Request $request)
+    public function check(Request $request)
     {
         $promo = Promotion::where('promo_code',$request['promo_code'])->get();
 

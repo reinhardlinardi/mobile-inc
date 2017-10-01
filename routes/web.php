@@ -31,7 +31,7 @@ Route::get('/api/trend','TrendAPIController@get');
 Route::post('/api/manage/user','AccountAPIController@add');
 Route::post('/api/manage/promotion/send','PromotionAPIController@send');
 Route::post('/api/manage/promotion/delete','PromotionAPIController@delete');
-Route::post('/api/manage/promotion/validate','PromotionAPIController@validate');
+Route::post('/api/manage/promotion/check','PromotionAPIController@validate');
 Route::post('/api/manage/confirmation','OrderAPIController@send');
 Route::post('/api/manage/order/order','OrderAPIController@order');
 Route::post('/api/manage/order/get','OrderAPIController@get');
