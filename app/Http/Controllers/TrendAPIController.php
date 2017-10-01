@@ -11,6 +11,7 @@ class TrendAPIController extends Controller
     public function get(Request $request)
     {
         $trend = Trend::orderBy('orders','desc')->first();
+
         $type = Handphone::where('id', $trend['phone_id'])->first()['type'];
         $type = str_replace('_',' ',$type);
 

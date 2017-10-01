@@ -79,4 +79,22 @@ class PromotionAPIController extends Controller
             'message' => "Invalid promotion code."
         ]);
     }
+
+    public function validate(Request $request)
+    {
+        $promo = Promotion::where('promo_code',$request['promo_code'])->get();
+
+        if(!($promo->isEmpty()))
+        {
+            return response()->json([
+                'message' => "valid"
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'message' => "invalid"
+            ]);
+        }
+    }
 }
