@@ -122,7 +122,7 @@ class OrderAPIController extends Controller
     public function send(Request $request)
     {
         $orders_db = Order::where('sent',true); 
-        $orders = $orders_db->groupBy('account_id','id')->get();
+        $orders = $orders_db->select('account_id')->distinct()->get();
 
         if(!($orders->isEmpty()))
         {
@@ -143,7 +143,8 @@ class OrderAPIController extends Controller
                         'to' => $account['firebase_key'],
                         'notification' => [
                             'title' => "Mobile, Inc.",
-                            'body' => "We have received your orders!"
+                            'body' => "We have received your orders!",
+                            'sound' => "default"
                         ]
                     ]
                 ]);
