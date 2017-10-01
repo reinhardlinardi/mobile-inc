@@ -84,8 +84,6 @@ class PromotionAPIController extends Controller
     {
         $promo = Promotion::where('promo_code',$request['promo_code'])->get();
 
-        dd($promo);
-
         if(!($promo->isEmpty()))
         {
             return response()->json([
