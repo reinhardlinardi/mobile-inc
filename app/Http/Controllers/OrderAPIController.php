@@ -143,7 +143,7 @@ class OrderAPIController extends Controller
                         'to' => $account['firebase_key'],
                         'notification' => [
                             'title' => "Mobile, Inc.",
-                            'body' => "We have received your order!"
+                            'body' => "We have received your orders!"
                         ]
                     ]
                 ]);

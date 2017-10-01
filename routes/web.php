@@ -26,6 +26,8 @@ Route::post('/manage/confirmation/send','OrderController@send')->middleware('aut
 
 // API request (return JSON)
 
+Route::get('/api/trend','TrendAPIController@get');
+
 Route::post('/api/manage/user','AccountAPIController@add');
 Route::post('/api/manage/promotion','PromotionAPIController@send');
 Route::post('/api/manage/confirmation','OrderAPIController@send');
