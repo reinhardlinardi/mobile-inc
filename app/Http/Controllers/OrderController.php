@@ -35,7 +35,7 @@ class OrderController extends Controller
     public function send(Request $request)
     {
         $orders_db = Order::where('sent',true);
-        $orders = $orders_db->groupBy('account_id')->get();
+        $orders = $orders_db->groupBy('account_id','order_id')->get();
 
         if(!($orders->isEmpty()))
         {
