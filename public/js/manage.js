@@ -6,4 +6,12 @@ $(document).ready( function() {
     $('#promo-form').focus( function() {
         $('#promo-message').text('');
     });
+
+    $('#mark-form').focus( function() {
+        $('#mark-message').text('');
+    });
+
+    $('#confirmation-btn').hover( function() {
+        $('#confirmation-message').text('');
+    });
 });

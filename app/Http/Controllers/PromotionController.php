@@ -27,7 +27,7 @@ class PromotionController extends Controller
                 $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,8);
 
                 $client = new Client();
-                $respone = $client->post("https://fcm.googleapis.com/fcm/send",[
+                $response = $client->post("https://fcm.googleapis.com/fcm/send",[
                     'headers' => [
                         'Authorization' => "key=" . $server,
                         'Content-Type' => 'application/json'
