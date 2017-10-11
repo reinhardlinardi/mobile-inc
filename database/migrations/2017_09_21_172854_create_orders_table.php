@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->integer('quantity')->unsigned();
             $table->integer('subtotal')->unsigned();
             $table->boolean('sent'); // Order sent to Unity
+            $table->timestamps();
             
             $table->primary('id');
         });

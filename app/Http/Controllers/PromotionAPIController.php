@@ -24,7 +24,7 @@ class PromotionAPIController extends Controller
             foreach($registered as $account)
             {
                 $account_number = rand(1000,9999);
-                $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,8);
+                $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,12);
 
                 $client = new Client();
                 $response = $client->post("https://fcm.googleapis.com/fcm/send",[
@@ -45,12 +45,27 @@ class PromotionAPIController extends Controller
                     ]
                 ]);
 
-                $promotion = Promotion::create([
-                    'id' => rand(1,1000),
-                    'player' => $request['player'],
-                    'promo_code' => $code,
-                    'used' => false
-                ]); 
+                $promotion = Promotion::where('account_id',$account['id'])->first();
+
+                if(!empty($promotion))
+                {
+                    $promotion->update([
+                        'promo_code' => $code,
+                        'received' => false,
+                        'used' => false
+                    ]);
+                }
+                else
+                {
+                    $promo = Promotion::create([
+                        'id' => rand(1,1000),
+                        'account_id' => $account['id'],
+                        'player' => $request['player'],
+                        'promo_code' => $code,
+                        'received' => false,
+                        'used' => false
+                    ]);
+                }
             }
 
             return response()->json([
@@ -62,22 +77,46 @@ class PromotionAPIController extends Controller
         ]);
     }
 
-    public function delete(Request $request) {
-        $promo = Promotion::where('promo_code', $request['promo_code']);
-        $collection = $promo->get();
-        
-        if(!($collection->isEmpty()))
+    public function update(Request $request) {
+        $account = Account::where('name', $request['name'])->first();
+
+        if(!(empty($account)))
         {
-            $promo->delete();
+            $promo = Promotion::where('account_id', $account['id'])->first();
 
             return response()->json([
-                'message' => "Promotion code deleted."
+                'message' => "Promotion update success.",
+                'promo_code' => $promo['promo_code']
             ]);
         }
+        else
+        {
+            return response()->json([
+                'message' => "Invalid account name."
+            ]);
+        }
+    }
 
-        return response()->json([
-            'message' => "Invalid promotion code."
-        ]);
+    public function confirm(Request $request)
+    {
+        $promo = Promotion::where('promo_code',$request['promo_code'])->first();
+        
+        if(!(empty($promo)))
+        {
+            $promo->update([
+                'received' => true
+            ]);
+
+            return response()->json([
+                'message' => "Confirmation success."
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'message' => "Invalid promotion code."
+            ]);
+        }
     }
 
     public function check(Request $request)

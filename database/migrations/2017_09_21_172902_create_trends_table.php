@@ -18,6 +18,7 @@ class CreateTrendsTable extends Migration
         Schema::create('trends', function (Blueprint $table) {
             $table->integer('phone_id')->unsigned();
             $table->integer('orders')->unsigned();
+            $table->timestamps();
 
             $table->primary('phone_id');
             $table->foreign('phone_id')->references('id')->on('handphones')->onDelete('cascade');

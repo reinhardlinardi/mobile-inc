@@ -24,7 +24,7 @@ class PromotionController extends Controller
             foreach($registered as $account)
             {
                 $account_number = rand(1000,9999);
-                $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,8);
+                $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,12);
 
                 $client = new Client();
                 $response = $client->post("https://fcm.googleapis.com/fcm/send",[
@@ -45,12 +45,27 @@ class PromotionController extends Controller
                     ]
                 ]);
                 
-                $promotion = Promotion::create([
-                    'id' => rand(1,1000),
-                    'player' => $request['player'],
-                    'promo_code' => $code,
-                    'used' => false
-                ]);
+                $promotion = Promotion::where('account_id',$account['id'])->first();
+                
+                if(!empty($promotion))
+                {
+                    $promotion->update([
+                        'promo_code' => $code,
+                        'received' => false,
+                        'used' => false
+                    ]);
+                }
+                else
+                {
+                    $promo = Promotion::create([
+                        'id' => rand(1,1000),
+                        'account_id' => $account['id'],
+                        'player' => $request['player'],
+                        'promo_code' => $code,
+                        'received' => false,
+                        'used' => false
+                    ]);
+                }
             }
 
             $progress = "Promotion codes sent.";

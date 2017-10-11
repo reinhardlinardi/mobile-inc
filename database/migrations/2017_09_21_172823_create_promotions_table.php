@@ -17,9 +17,12 @@ class CreatePromotionsTable extends Migration
 
         Schema::create('promotions', function (Blueprint $table) {
             $table->integer('id')->unsigned();
+            $table->integer('account_id')->unsigned();
             $table->string('player');
             $table->string('promo_code');
+            $table->boolean('received'); // Android has received promotion code
             $table->boolean('used');
+            $table->timestamps();
 
             $table->primary('id');
         });

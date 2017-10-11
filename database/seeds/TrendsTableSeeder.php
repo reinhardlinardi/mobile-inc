@@ -17,7 +17,9 @@ class TrendsTableSeeder extends Seeder
         foreach($handphone as $phone) {
             DB::table('trends')->insert([
                 'phone_id' => $phone['id'],
-                'orders' => 0
+                'orders' => 0,
+                'created_at' => Carbon\Carbon::now(),
+                'updated_at' => Carbon\Carbon::now()
             ]);
         }
     }

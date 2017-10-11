@@ -97,12 +97,15 @@ class OrderAPIController extends Controller
                     'phone_id' => $phone_id,
                     'quantity' => $quantity,
                     'subtotal' => (int)($phone_price * $quantity * $promo_price),
-                    'sent' => false
+                    'sent' => false,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
                 ]);
 
                 $trend = Trend::where('phone_id',$phone_id)->first();
                 $trend->update([
-                    'orders' => $trend['orders'] + $quantity
+                    'orders' => $trend['orders'] + $quantity,
+                    'updated_at' => Carbon::now()
                 ]);
             }
         }
