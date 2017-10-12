@@ -19,12 +19,12 @@ class PromotionController extends Controller
         if(!($registered->isEmpty()))
         {
             $server = Server::get()->first()['server_key'];
-            $promo_number = rand(1,1000);
+            $promo_number = rand(1,10000);
 
             foreach($registered as $account)
             {
-                $account_number = rand(1000,9999);
-                $code = substr(md5("promo_" . $promo_number . "_" . $account_number),0,12);
+                $account_number = rand(1,10000);
+                $code = substr(md5("promo_" . $promo_number . "_" . $account_number . "_" . Carbon\Carbon::now()),0,12);
 
                 $client = new Client();
                 $response = $client->post("https://fcm.googleapis.com/fcm/send",[
