@@ -86,7 +86,8 @@ class PromotionAPIController extends Controller
 
             return response()->json([
                 'message' => "Promotion update success.",
-                'promo_code' => $promo['promo_code']
+                'promo_code' => $promo['promo_code'],
+                'is_new' => !($promo['received'])
             ]);
         }
         else
@@ -103,19 +104,12 @@ class PromotionAPIController extends Controller
         
         if(!(empty($promo)))
         {
-            if($promo['received']) $is_new = true;
-            else 
-            {
-                $is_new = false;
-
-                $promo->update([
-                    'received' => true
-                ]);
-            }
+            $promo->update([
+                'received' => true
+            ]);
 
             return response()->json([
-                'message' => "Confirmation success.",
-                'is_new' => $is_new
+                'message' => "Confirmation success."
             ]);
         }
         else
