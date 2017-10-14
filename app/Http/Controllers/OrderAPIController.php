@@ -77,12 +77,15 @@ class OrderAPIController extends Controller
                     }
                     else
                     {
-                        Statistic::create([
-                            'city' => $request['city'],
-                            'orders' => 1,
-                            'created_at' => Carbon::now(),
-                            'updated_at' => Carbon::now()
-                        ]);
+                        if($request['city'] != "UNDEFINED")
+                        {
+                            Statistic::create([
+                                'city' => $request['city'],
+                                'orders' => 1,
+                                'created_at' => Carbon::now(),
+                                'updated_at' => Carbon::now()
+                            ]);
+                        }
                     }
                 }
 
