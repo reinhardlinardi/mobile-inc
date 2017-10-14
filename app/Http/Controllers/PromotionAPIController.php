@@ -103,12 +103,19 @@ class PromotionAPIController extends Controller
         
         if(!(empty($promo)))
         {
-            $promo->update([
-                'received' => true
-            ]);
+            if($promo['received']) $is_new = true;
+            else 
+            {
+                $is_new = false;
+
+                $promo->update([
+                    'received' => true
+                ]);
+            }
 
             return response()->json([
-                'message' => "Confirmation success."
+                'message' => "Confirmation success.",
+                'is_new' => $is_new
             ]);
         }
         else
