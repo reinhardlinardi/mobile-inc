@@ -10,11 +10,20 @@ class AccountController extends Controller
 {
     public function add(Request $request)
     {
-        $registered = Account::where('name', $request['name'])->first();
+        $name_registered = Account::where('name', $request['name'])->first();
+        $key_registered = Account::where('firebase_key', $request['firebase_key'])->first();
 
-        if(!(empty($registered))) {
-            $registered->update([
+        if(!(empty($name_registered))) {
+            $name_registered->update([
                 'firebase_key' => $request['firebase_key'],
+                'updated_at' => Carbon::now()
+            ]);
+
+            $add = "User updated.";
+        }
+        else if(!(empty($key_registered))) {
+            $key_registered->update([
+                'name' => $request['name'],
                 'updated_at' => Carbon::now()
             ]);
 
