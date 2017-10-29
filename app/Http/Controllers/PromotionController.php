@@ -51,6 +51,7 @@ class PromotionController extends Controller
                 {
                     $promotion->update([
                         'promo_code' => $code,
+                        'player' => $request['player'],
                         'received' => false,
                         'used' => false
                     ]);
