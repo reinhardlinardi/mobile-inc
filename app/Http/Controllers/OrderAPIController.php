@@ -145,9 +145,8 @@ class OrderAPIController extends Controller
                 $phone = $handphone->where('id', $order['phone_id'])->first();
                 $phone_brand = $phone['brand'];
                 $phone_type = str_replace("_"," ",$phone['type']);
-                $phone_name = $phone_brand . " " . $phone_type;
 
-                $order_json = array_merge($order_json, array($phone_name => array($order['quantity'], $order['subtotal'])));
+                $order_json = array_merge($order_json, array(array($phone_type => array($order['quantity'], $order['subtotal']))));
             }
         }
         
